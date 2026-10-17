@@ -1,0 +1,4 @@
+data/*.db
+data/backups/
+__pycache__/
+.streamlit/secrets.toml

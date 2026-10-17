@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: production-kpi
+    runtime: docker
+    plan: starter            # a persistent disk needs a paid plan
+    healthCheckPath: /_stcore/health
+    disk:
+      name: kpi-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: KPI_DB_PATH
+        value: /data/kpi.db
+      - key: KPI_APP_PASSWORD
+        sync: false          # you type the password once in the Render dashboard
